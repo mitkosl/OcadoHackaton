@@ -79,7 +79,7 @@ def most_common(lst):
 
 madeSnapshots = False
 
-preferences = {'mitko': (10, 15, 25), 'trayan': (20, 15, 5), 'joro': (32, 22, 14)}
+preferences = {'mitko': (10, 0, 0), 'trayan': (0, 0, 30), 'joro': (0, 0, 10), 'miro': (0, 0, 10)}
 
 print ("starting endless while")
 
@@ -97,8 +97,8 @@ while True:
 
         if command == 25 and madeSnapshots == False:
             madeSnapshots = True
-            sleep(2)
-            for photoIdx in range(3):
+            sleep(0.5)
+            for photoIdx in range(5):
                 # Create an in-memory stream
                 stream = io.BytesIO()
                 camera.capture(stream, format='jpeg')
@@ -181,9 +181,10 @@ while True:
                         break
 
             res = most_common(probableNames)
-            print(res)
-            coctailProportions = preferences[res]
+            print("Name: '%s'" % res)
 
+            coctailProportions = preferences[res]
+            print ("calling coctails function")
             coctail.makeCoctail(coctailProportions)
 
             
