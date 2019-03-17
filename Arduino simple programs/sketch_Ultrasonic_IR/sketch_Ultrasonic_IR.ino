@@ -70,11 +70,11 @@ void loop()
   if (irrecv.decode(&results)) //if the ir receiver module receiver data
   {
 
-//    Serial.print("irCode: "); //print"irCode: "
-//    Serial.print(results.value, HEX); //print the value in hexdecimal
-//    Serial.print(", bits: "); //print" , bits: "
-//    Serial.println(results.bits); //print the bits
-//    Serial.println("");
+    //    Serial.print("irCode: "); //print"irCode: "
+    //    Serial.print(results.value, HEX); //print the value in hexdecimal
+    //    Serial.print(", bits: "); //print" , bits: "
+    //    Serial.println(results.bits); //print the bits
+    //    Serial.println("");
 
     if (results.value == 0xFFA25D) {
       command = CHMinus;
@@ -168,12 +168,19 @@ void loop()
 
     if (distance < 100 && command == PlayPause) {
       //Serial.print("command: "); //print" , bits: "
-      Serial.print(command); //print the bits
+      Serial.println(command); //print the bits
       //Serial.println("");
     }
 
     irrecv.resume(); // Receive the next value
   }
+
+  if (distance < 100) {
+    Serial.println(25);
+  } else {
+    Serial.println(30);
+  }
+
   delay(1000); //delay 600ms
 }
 
