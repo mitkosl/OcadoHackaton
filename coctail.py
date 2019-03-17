@@ -58,9 +58,9 @@ def makeCoctail(quantities):
     wiringpi.pullUpDnControl(meter3, wiringpi.GPIO.PUD_UP)
 
 
-    wiringpi.wiringPiISR(meter1, wiringpi.GPIO.INT_EDGE_FALLING , gpio_callback1)
-    wiringpi.wiringPiISR(meter2, wiringpi.GPIO.INT_EDGE_FALLING , gpio_callback2)
-    wiringpi.wiringPiISR(meter3, wiringpi.GPIO.INT_EDGE_FALLING , gpio_callback3)
+    wiringpi.wiringPiISR(meter1, wiringpi.GPIO.INT_EDGE_BOTH , gpio_callback1)
+    wiringpi.wiringPiISR(meter2, wiringpi.GPIO.INT_EDGE_BOTH , gpio_callback2)
+    wiringpi.wiringPiISR(meter3, wiringpi.GPIO.INT_EDGE_BOTH , gpio_callback3)
 
     if q1 > 0:
         wiringpi.digitalWrite(pump1, 1)

@@ -79,7 +79,7 @@ def most_common(lst):
 
 madeSnapshots = False
 
-preferences = {'mitko': (10, 0, 0), 'trayan': (0, 0, 30), 'joro': (0, 0, 10), 'miro': (0, 0, 10)}
+preferences = {'mitko': (10, 0, 0), 'trayan': (50, 0, 0), 'joro': (0, 0, 10), 'miro': (0, 0, 10), 'Neven': (30 , 0 , 30)}
 
 print ("starting endless while")
 
